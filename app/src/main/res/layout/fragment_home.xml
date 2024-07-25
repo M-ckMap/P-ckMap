@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <ImageButton
+        android:id="@+id/exImage1"
+        android:layout_width="183dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/image_button_description"
+        app:cornerRadius="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.361"
+        app:srcCompat="@drawable/seoul" />
+
+    <ImageButton
+        android:id="@+id/exImage2"
+        android:layout_width="183dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/image_button_description"
+        app:cornerRadius="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.361"
+        app:srcCompat="@drawable/seoul" />
+
+    <ImageButton
+        android:id="@+id/exImage3"
+        android:layout_width="183dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="12dp"
+        android:contentDescription="@string/image_button_description"
+        app:cornerRadius="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.754"
+        app:srcCompat="@drawable/seoul" />
+
+    <ImageButton
+        android:id="@+id/exImage4"
+        android:layout_width="183dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="212dp"
+        android:contentDescription="@string/image_button_description"
+        app:cornerRadius="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.754"
+        app:srcCompat="@drawable/seoul" />
+
+    <TextView
+        android:id="@+id/explain1"
+        android:layout_width="183dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:text="서울 슈슉슈슉슈슉얍얍"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exImage1" />
+
+    <TextView
+        android:id="@+id/explain2"
+        android:layout_width="183dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:text="서울 슈슉슈슉슈슉얍얍"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exImage1" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/white" >
+    </androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="79dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="720dp"
+        android:layout_marginBottom="-50dp"
+        android:backgroundTint="@color/main"
+        android:text="Login"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/toolBar"
+        app:layout_constraintEnd_toStartOf="@+id/toolBar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="-70dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search"
+                    android:layout_width="400dp"
+                    android:layout_height="39dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/background_searchview"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@null"
+                    app:queryHint="검색어를 입력하세요." />
+
+                <TextView
+                    android:layout_width="282dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@color/main"
+                    android:textSize="11sp" />
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/feedText"
+        android:layout_width="194dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical|left"
+        android:text="피드 보기 "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+
+    <ImageButton
+        android:id="@+id/goButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toEndOf="@+id/feedText"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        android:contentDescription="@string/goButton"
+        app:srcCompat="@drawable/navigate_next" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
