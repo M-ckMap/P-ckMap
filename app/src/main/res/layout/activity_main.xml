@@ -5,7 +5,55 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/white" >
+    </androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="79dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="720dp"
+        android:layout_marginBottom="-50dp"
+        android:backgroundTint="@color/main"
+        android:text="Login"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/toolBar"
+        app:layout_constraintEnd_toStartOf="@+id/toolBar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="-70dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
 
     <FrameLayout
         android:id="@+id/mainFrameLayout"
@@ -14,6 +62,11 @@
 
     <FrameLayout
         android:id="@+id/fragment_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/fragment_location"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
