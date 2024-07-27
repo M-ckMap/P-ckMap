@@ -121,7 +121,7 @@ class RegisterFragment : AppCompatActivity() {
                                 // 번호 형식
                                 if (Pattern.matches(phonePattern, phone)) {
                                     val insert = DB!!.insertData(user, pass, nick, phone)
-                                    // 가입 성공 시 Toast를 띄우고 메인 화면으로 전환
+                                    // 가입 성공 > 메인 화면으로 전환
                                     if (insert == true) {
                                         Toast.makeText(
                                             this@RegisterFragment,
