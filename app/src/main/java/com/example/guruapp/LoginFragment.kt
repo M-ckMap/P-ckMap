@@ -52,7 +52,7 @@ class LoginFragment : AppCompatActivity() {
         }
         // 회원가입 버튼 클릭
         btnRegister.setOnClickListener {
-            val loginIntent = Intent(this, RegisterActivity::class.java)
+            val loginIntent = Intent(this, RegisterFragment::class.java)
             startActivity(loginIntent)
         }
     }
