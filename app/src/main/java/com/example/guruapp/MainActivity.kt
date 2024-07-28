@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.guruapp.databinding.ActivityMainBinding
 import com.google.firebase.FirebaseApp
-import com.kakao.vectormap.KakaoMap
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

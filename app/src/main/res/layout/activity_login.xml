@@ -50,7 +50,7 @@
             android:layout_width="370dp"
             android:layout_height="48dp"
             android:text="로그인 하시고 더 즐거운 여행을 시작해보세요."
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="130dp"
             android:layout_marginBottom="150dp" />
 
         <com.google.android.material.textfield.TextInputLayout

@@ -16,19 +16,6 @@
         app:titleTextColor="@color/white" >
     </androidx.appcompat.widget.Toolbar>
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="79dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="720dp"
-        android:layout_marginBottom="-50dp"
-        android:backgroundTint="@color/main"
-        android:text="Login"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/toolBar"
-        app:layout_constraintEnd_toStartOf="@+id/toolBar"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
@@ -74,12 +61,23 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="378dp"
         android:layout_gravity="center"
+        android:layout_marginTop="650dp"
         app:layout_constraintBottom_toTopOf="@+id/search"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/scrollView">
+        app:layout_constraintTop_toTopOf="@+id/scrollView"
+        android:background="@drawable/rounded_map_view_background">
 
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_view"
+            android:layout_width="351dp"
+            android:layout_height="351dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search" />
 
     </FrameLayout>
 
@@ -95,7 +93,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolBar" />
 
-    <Button
+    <TextView
+        android:id="@+id/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="현재 위치 보기"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search" />
+
+    <!-- <Button
         android:id="@+id/locationSearchButton"
         android:layout_width="184dp"
         android:layout_height="48dp"
@@ -106,17 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search" />
+        app:layout_constraintTop_toBottomOf="@+id/search" /> -->
 
-    <com.kakao.vectormap.MapView
-        android:id="@+id/map_view"
-        android:layout_width="351dp"
-        android:layout_height="254dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/shape_map_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
