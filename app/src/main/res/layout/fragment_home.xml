@@ -51,6 +51,7 @@
             android:orientation="vertical">
 
         </LinearLayout>
+
     </ScrollView>
 
     <androidx.appcompat.widget.SearchView
@@ -98,7 +99,7 @@
         android:id="@+id/locationSearchButton"
         android:layout_width="184dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:text="현재 위치로 검색하기"
         android:textColor="@color/black"
         android:textSize="12sp"
@@ -107,5 +108,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search" />
 
+    <com.kakao.vectormap.MapView
+        android:id="@+id/map_view"
+        android:layout_width="351dp"
+        android:layout_height="254dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/shape_map_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

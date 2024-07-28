@@ -3,12 +3,15 @@ package com.example.guruapp
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.guruapp.databinding.ActivityMainBinding
+import com.google.firebase.FirebaseApp
+import com.kakao.vectormap.KakaoMap
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FirebaseApp.initializeApp(this)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
