@@ -15,6 +15,11 @@ import com.google.firebase.database.FirebaseDatabase
 
 class MissionFragment : Fragment() {
 
+    data class Mission(
+        val mission: String? = null,
+        val location: String? = null
+    )
+
     private lateinit var auth: FirebaseAuth
     private lateinit var missionButton: Button
     private lateinit var locationEdt: EditText

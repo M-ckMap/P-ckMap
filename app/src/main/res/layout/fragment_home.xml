@@ -65,10 +65,11 @@
         android:layout_height="378dp"
         android:layout_gravity="center"
         android:layout_marginTop="650dp"
+        android:background="@drawable/rounded_map_view_background"
         app:layout_constraintBottom_toTopOf="@+id/search"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView"
-        android:background="@drawable/rounded_map_view_background">
+        app:layout_constraintVertical_bias="0.462">
 
         <com.google.android.gms.maps.MapView
             android:id="@+id/map_view"
@@ -98,26 +99,26 @@
         android:id="@+id/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
         android:text="현재 위치 보기"
-        android:textSize="16sp"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search" />
 
-    <!-- <Button
-        android:id="@+id/locationSearchButton"
-        android:layout_width="184dp"
+    <Button
+        android:id="@+id/toSearch"
+        android:layout_width="380dp"
         android:layout_height="48dp"
-        android:layout_marginTop="15dp"
-        android:text="현재 위치로 검색하기"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search" /> -->
+        android:layout_marginStart="-380dp"
+        android:layout_marginTop="-45dp"
+        android:backgroundTint="#00EEEEEE"
+        android:text="Button"
+        android:textColor="@android:color/transparent"
+        app:layout_constraintStart_toEndOf="@+id/search"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.gms.google-services")
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -32,6 +33,10 @@ android {
 
     }
 
+    buildFeatures {
+        viewBinding; true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -51,6 +56,9 @@ android {
 }
 
 dependencies {
+    implementation ("com.google.firebase:firebase-firestore:25.0.0")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.0")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.7.0")
     implementation ("com.google.firebase:firebase-database:21.0.0")
     implementation ("com.google.firebase:firebase-auth:23.0.0")
     implementation ("com.firebaseui:firebase-ui-auth:7.2.0")
@@ -68,6 +76,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -1,9 +1,11 @@
 package com.example.guruapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.guruapp.databinding.FragmentHomeBinding
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -41,6 +43,13 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         mapView = binding.mapView
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
+
+        // Set up button click listener for navigating to SearchActivity
+        val searchButton: Button = binding.root.findViewById(R.id.toSearch)
+        searchButton.setOnClickListener {
+            val intent = Intent(activity, SearchActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
