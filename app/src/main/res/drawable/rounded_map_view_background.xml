@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+        <item>
+            <!-- Background color for the rounded corner view -->
+            <shape xmlns:android="http://schemas.android.com/apk/res/android">
+                <solid android:color="@android:color/white"/> <!-- Background color -->
+                <corners android:radius="18dp"/> <!-- Adjust the radius as needed -->
+            </shape>
+        </item>
+    </layer-list>

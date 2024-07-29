@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -15,16 +15,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GURUapp"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
         <meta-data
-            android:name="com.kakao.vectormap.APP_KEY"
-            android:value="dba17c1d6c25e5197a54d5f567a77c96"/>
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBLq9HpsISxtRO8SdvcMvuMbpc5jjoxo8E" />
 
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustPan">
+            android:name=".LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,10 +32,12 @@
             </intent-filter>
         </activity>
 
-        
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
         <activity android:name=".LocationFragment" />
     </application>
-
-
 
 </manifest>

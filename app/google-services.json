@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "630224432060",
+    "project_id": "p-ckmap-1049c",
+    "storage_bucket": "p-ckmap-1049c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630224432060:android:0c037735ce73c3be6c19b9",
+        "android_client_info": {
+          "package_name": "com.example.guruapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtV9WOX9FtvXnUv9EwWnSfuhzlno7jD9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
