@@ -70,10 +70,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     //로그인 유지하는 코드
-    override fun onStart() {
+    /*override fun onStart() {
         super.onStart()
         if (auth.currentUser != null) {
             moveMainPage(auth.currentUser)
         }
-    }
+    }*/
 }

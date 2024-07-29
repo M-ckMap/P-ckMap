@@ -46,7 +46,8 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         this.googleMap = googleMap
 
-        currentMarker = setupMarker(LatLngEntity(37.5562, 126.9724))  // default 서울역
+        // 현재 에뮬레이터라 현위치를 뜨게 할 수 없으므로 디폴트 위치 서울여자대학교로 설정
+        currentMarker = setupMarker(LatLngEntity(37.628274, 127.090446))
         currentMarker?.showInfoWindow()
     }
 
@@ -55,7 +56,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         val markerOption = MarkerOptions().apply {
             position(positionLatLng)
             title("위치")
-            snippet("서울역 위치")
+            snippet("서울여자대학교")
         }
 
         googleMap.mapType = GoogleMap.MAP_TYPE_NORMAL
