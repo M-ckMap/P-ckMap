@@ -74,7 +74,7 @@
 
                 <EditText
                     android:background="@color/gray"
-                    android:id="@+id/email_edt"
+                    android:id="@+id/locationEdt"
                     android:layout_width="370dp"
                     android:layout_height="55dp"
                     android:layout_marginTop="100dp"
@@ -92,7 +92,7 @@
 
                 <EditText
                     android:background="@color/gray"
-                    android:id="@+id/password_edt"
+                    android:id="@+id/missionEdt"
                     android:layout_width="370dp"
                     android:layout_height="55dp"
                     android:layout_marginTop="200dp"
@@ -128,7 +128,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolBar" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/missionButton"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/main"
@@ -153,7 +153,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/missionButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
