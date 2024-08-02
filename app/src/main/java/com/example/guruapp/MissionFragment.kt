@@ -11,7 +11,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 
 class MissionFragment : Fragment() {
 
@@ -48,46 +48,45 @@ class MissionFragment : Fragment() {
 
         // Set button click listener
         missionButton.setOnClickListener {
-            addMissionToDatabase()
+            addMissionToFirestore()
         }
     }
 
-    private fun addMissionToDatabase() {
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference()
+    private fun addMissionToFirestore() {
+        // Access Firestore instance
+        val db = FirebaseFirestore.getInstance()
 
         // Get current user
         val user = auth.currentUser
         val uid = user?.uid
 
-        data class DataModel(
-            val location: String = "",
-            val mission: String = ""
-        )
-
         if (uid != null) {
-            val dataInput = DataModel(
-                locationEdt.text.toString(),
-                missionEdt.text.toString()
+            // Create a new mission data map
+            val missionData = hashMapOf(
+                "location" to locationEdt.text.toString(),
+                "mission" to missionEdt.text.toString()
             )
 
-            myRef.child("missions").child(uid).push().setValue(dataInput)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(context, "미션이 성공적으로 등록되었습니다.", Toast.LENGTH_SHORT).show()
-                        // Clear EditTexts
-                        locationEdt.text.clear()
-                        missionEdt.text.clear()
-                        // Hide keyboard
-                        hideKeyboard()
-                    } else {
-                        Toast.makeText(context, "미션 등록에 실패하셨습니다.", Toast.LENGTH_SHORT).show()
-                    }
+            // Add a new document with a generated ID to the "missions" collection
+            db.collection("missions").document(uid)
+                .collection("userMissions")
+                .add(missionData)
+                .addOnSuccessListener { documentReference ->
+                    Toast.makeText(context, "미션이 성공적으로 등록되었습니다.", Toast.LENGTH_SHORT).show()
+                    // Clear EditTexts
+                    locationEdt.text.clear()
+                    missionEdt.text.clear()
+                    // Hide keyboard
+                    hideKeyboard()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(context, "미션 등록에 실패하셨습니다.", Toast.LENGTH_SHORT).show()
                 }
         } else {
             Toast.makeText(context, "인증되지 않은 사용자입니다.", Toast.LENGTH_SHORT).show()
         }
     }
+
 
     private fun hideKeyboard() {
         val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
