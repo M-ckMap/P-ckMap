@@ -2,6 +2,7 @@ package com.example.guruapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class MypageFragment : Fragment(), View.OnClickListener {
 
@@ -18,6 +22,7 @@ class MypageFragment : Fragment(), View.OnClickListener {
     private lateinit var textViewUserEmail: TextView
     private lateinit var buttonLogout: Button
     private lateinit var textViewDelete: TextView
+    private lateinit var recyclerView: RecyclerView // Add RecyclerView reference here
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,11 +30,13 @@ class MypageFragment : Fragment(), View.OnClickListener {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_mypage, container, false)
+        loadBookmarkedMissions()
 
         // Initialize views
         textViewUserEmail = view.findViewById(R.id.textviewUserEmail)
         buttonLogout = view.findViewById(R.id.buttonLogout)
         textViewDelete = view.findViewById(R.id.textviewDelete)
+        recyclerView = view.findViewById(R.id.recyclerView) // Initialize RecyclerView
 
         // Initialize Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance()
@@ -49,6 +56,9 @@ class MypageFragment : Fragment(), View.OnClickListener {
         // Set click listeners
         buttonLogout.setOnClickListener(this)
         textViewDelete.setOnClickListener(this)
+
+        // Load bookmarked missions
+        loadBookmarkedMissions()
 
         return view
     }
@@ -86,6 +96,28 @@ class MypageFragment : Fragment(), View.OnClickListener {
                     }
                     .show()
             }
+        }
+    }
+
+    private fun loadBookmarkedMissions() {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
+        val bookmarkRef = FirebaseFirestore.getInstance().collection("users").document(userId)
+            .collection("bookmarkedMissions")
+
+        bookmarkRef.get().addOnSuccessListener { result ->
+            val missions = result.map { document ->
+                val data = document.data
+                MissionFragment.Mission(
+                    id = document.id,
+                    location = data["location"] as String,
+                    mission = data["mission"] as String,
+                    isBookmarked = true
+                )
+            }
+            recyclerView.adapter = MissionAdapter(missions) { /* Handle bookmark click */ }
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        }.addOnFailureListener { e ->
+            Log.e("MypageFragment", "Error loading bookmarked missions", e)
         }
     }
 }

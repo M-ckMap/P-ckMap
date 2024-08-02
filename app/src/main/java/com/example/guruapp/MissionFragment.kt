@@ -16,14 +16,26 @@ import com.google.firebase.firestore.FirebaseFirestore
 class MissionFragment : Fragment() {
 
     data class Mission(
-        val mission: String? = null,
-        val location: String? = null
-    )
+        val id: String = "",
+        val location: String = "",
+        val mission: String = "",
+        val isBookmarked: Boolean = false
+    ) {
+        fun toMap(): Map<String, Any> {
+            return mapOf(
+                "id" to id,
+                "location" to location,
+                "mission" to mission,
+                "isBookmarked" to isBookmarked
+            )
+        }
+    }
 
     private lateinit var auth: FirebaseAuth
     private lateinit var missionButton: Button
     private lateinit var locationEdt: EditText
     private lateinit var missionEdt: EditText
+    private lateinit var cancelButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +49,7 @@ class MissionFragment : Fragment() {
 
         // Initialize views
         missionButton = view.findViewById(R.id.missionButton)
+        cancelButton = view.findViewById(R.id.cancelButton)
         locationEdt = view.findViewById(R.id.locationEdt)
         missionEdt = view.findViewById(R.id.missionEdt)
 
@@ -49,6 +62,13 @@ class MissionFragment : Fragment() {
         // Set button click listener
         missionButton.setOnClickListener {
             addMissionToFirestore()
+        }
+        cancelButton.setOnClickListener {
+            // Clear EditTexts
+            locationEdt.text.clear()
+            missionEdt.text.clear()
+            // Hide keyboard
+            hideKeyboard()
         }
     }
 
@@ -86,7 +106,6 @@ class MissionFragment : Fragment() {
             Toast.makeText(context, "인증되지 않은 사용자입니다.", Toast.LENGTH_SHORT).show()
         }
     }
-
 
     private fun hideKeyboard() {
         val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
