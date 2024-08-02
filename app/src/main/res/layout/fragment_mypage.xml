@@ -54,7 +54,7 @@
 
         <TextView
             android:id="@+id/textviewUserEmail"
-            android:layout_width="260dp"
+            android:layout_width="255dp"
             android:layout_height="55dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="50dp"
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="135dp"
-            android:layout_marginLeft="-55dp"
+            android:layout_marginLeft="-40dp"
             android:text="회원탈퇴"
             android:textColor="@color/darkGray" />
 
@@ -78,7 +78,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="115dp"
-            android:text="로그아웃" />
+            android:text="로그아웃"
+            android:backgroundTint="@color/main"/>
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

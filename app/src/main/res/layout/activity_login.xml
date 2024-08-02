@@ -49,7 +49,7 @@
             android:gravity="center"
             android:layout_width="370dp"
             android:layout_height="48dp"
-            android:text="로그인 하시고 더 즐거운 여행을 시작해보세요."
+            android:text="로그인 하고 더 즐거운 여행을 시작해보세요."
             android:layout_marginTop="130dp"
             android:layout_marginBottom="150dp" />
 
@@ -93,11 +93,12 @@
             android:id="@+id/email_login_btn"
             android:layout_width="356dp"
             android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="40dp"
-            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/main"
             android:text="회원가입 및 이메일 로그인" />
 
     </LinearLayout>

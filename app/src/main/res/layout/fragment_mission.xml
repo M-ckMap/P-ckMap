@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="-130dp"
+        android:layout_marginStart="-100dp"
         android:layout_marginTop="44dp"
         android:text="(서울 홍대, 대전 은행동 등)"
         android:textSize="12sp"
@@ -65,39 +65,41 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="370dp"
+                android:layout_width="355dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="70dp"
-                android:layout_marginBottom="150dp">
+                android:layout_marginBottom="150dp"
+                android:layout_gravity="center">
 
                 <EditText
                     android:background="@color/gray"
                     android:id="@+id/locationEdt"
-                    android:layout_width="370dp"
+                    android:layout_width="355dp"
                     android:layout_height="55dp"
                     android:layout_marginTop="100dp"
                     android:layout_marginBottom="10dp"
-                    android:hint="지역을 입력해주세요." />
+                    android:hint="지역을 입력해주세요" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="370dp"
+                android:layout_width="355dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="-100dp">
+                android:layout_marginTop="-100dp"
+                android:layout_gravity="center">
 
                 <EditText
                     android:background="@color/gray"
                     android:id="@+id/missionEdt"
-                    android:layout_width="370dp"
+                    android:layout_width="355dp"
                     android:layout_height="55dp"
                     android:layout_marginTop="200dp"
                     android:layout_marginBottom="10dp"
-                    android:hint="미션을 입력해주세요." />
+                    android:hint="미션을 작성해주세요" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
