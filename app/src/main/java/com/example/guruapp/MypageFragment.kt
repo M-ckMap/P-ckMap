@@ -85,7 +85,7 @@ class MypageFragment : Fragment(), View.OnClickListener {
                                 // Navigate to MainActivity
                                 val intent = Intent(requireContext(), MainActivity::class.java)
                                 startActivity(intent)
-                                requireActivity().finish() // Close the current activity
+                                requireActivity().finish()
                             } else {
                                 Toast.makeText(requireContext(), "계정 삭제 실패.", Toast.LENGTH_LONG).show()
                             }
