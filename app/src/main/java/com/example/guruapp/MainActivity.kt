@@ -33,10 +33,9 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navi_mission -> {
-                    val fragmentTransaction = supportFragmentManager.beginTransaction()
+                    val fragmentTransaction = customdialog(this)
                     fragmentTransaction
-                        .replace(R.id.mainFrameLayout, MissionFragment())
-                        .commit()
+                        .show(supportFragmentManager,"customdialog")
                     true
                 }
                 R.id.navi_info -> {

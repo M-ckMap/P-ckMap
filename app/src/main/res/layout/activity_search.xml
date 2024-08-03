@@ -40,7 +40,7 @@
         android:id="@+id/homeButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:backgroundTint="@color/gray"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +61,9 @@
             android:layout_weight="1"
             android:layout_marginTop="50dp"
             android:layout_marginLeft="6dp"
+            android:fontFamily="@font/applegn"
             android:hint="검색어를 입력해주세요."
+            android:textSize="14sp"
             android:inputType="text" />
 
         <Button
@@ -69,7 +71,9 @@
             android:layout_marginTop="50dp"
             android:layout_marginRight="6dp"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/applegb"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
             android:text="검색" />
 
     </LinearLayout>
