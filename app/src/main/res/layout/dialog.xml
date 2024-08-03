@@ -3,87 +3,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/rounded_map_view_background"
-    android:minWidth="300dp"
+    android:minWidth="400dp"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:background="@drawable/dialog_border"
+    android:padding="10dp">
     <TextView
         android:id="@+id/missionLocationText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/applegsb"
+        android:gravity="center"
         android:text="어느 지역 미션인가요?"
         android:textSize="16sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="355dp"
-        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="40dp">
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <EditText
             android:id="@+id/locationEdt"
-            android:layout_width="355dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/gray"
-            android:hint="지역을 입력해주세요" />
+            android:layout_width="match_parent"
+            android:maxLength="20"
+            android:layout_height="48dp"
+            android:background="@drawable/graybar"
+            android:hint="지역을 입력해주세요"
+            android:fontFamily="@font/applegn"
+            android:textSize="14sp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/missionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp"
         android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:fontFamily="@font/applegsb"
         android:text="만들 미션을 입력해주세요"
         android:textSize="16sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="355dp"
-        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="40dp">
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <EditText
             android:id="@+id/missionEdt"
-            android:layout_width="355dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="200dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/gray"
-            android:hint="미션을 작성해주세요" />
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:fontFamily="@font/applegn"
+            android:background="@drawable/graybar"
+            android:maxLength="20"
+            android:hint="미션을 작성해주세요"
+            android:textSize="14sp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <Button
         android:id="@+id/missionButton"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/main"
+        android:fontFamily="@font/applegb"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:text="미션 만들기"
         android:textColor="@color/white"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="22dp"
         android:textSize="16sp" />
 
     <Button
         android:id="@+id/cancelButton"
-        android:layout_width="350dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
         android:backgroundTint="@color/gray"
+        android:fontFamily="@font/applegb"
         android:text="취소하기"
+        android:textSize="16sp"
         android:textColor="@color/darkGray"
-        android:textSize="16sp" />
+        android:layout_marginBottom="20dp"/>
 
 </LinearLayout>
