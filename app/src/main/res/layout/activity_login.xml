@@ -47,12 +47,15 @@
         android:gravity="center">
 
         <TextView
-            android:gravity="center"
             android:layout_width="370dp"
             android:layout_height="48dp"
-            android:text="로그인 하고 더 즐거운 여행을 시작해보세요."
             android:layout_marginTop="130dp"
-            android:layout_marginBottom="150dp" />
+            android:layout_marginBottom="150dp"
+            android:fontFamily="@font/applegn"
+            android:gravity="center"
+            android:text="로그인 하고 더 즐거운 여행을 시작해보세요."
+            android:textSize="16sp"
+            app:font="@font/applegn" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -69,6 +72,7 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginBottom="10dp"
+                android:fontFamily="@font/applegul"
                 android:hint="Email" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,6 +90,7 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="200dp"
                 android:layout_marginBottom="10dp"
+                android:fontFamily="@font/applegul"
                 android:hint="Password"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -100,6 +105,7 @@
             android:layout_marginRight="15dp"
             android:layout_marginBottom="40dp"
             android:backgroundTint="@color/main"
+            android:fontFamily="@font/applegn"
             android:text="회원가입 및 이메일 로그인" />
 
     </LinearLayout>
