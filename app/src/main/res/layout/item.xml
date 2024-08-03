@@ -11,9 +11,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="16dp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@color/main"
+        android:fontFamily="@font/applegb"
         android:layout_marginTop="12dp"
         android:layout_marginLeft="3dp"
         android:text="Location" />
@@ -23,8 +24,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:layout_marginTop="13dp"
-        android:textSize="13dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/applegsb"
+        android:textSize="16sp"
         android:text="Mission" />
 
     <ImageButton
