@@ -2,6 +2,8 @@ package com.example.guruapp
 
 import android.app.Dialog
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -50,6 +52,8 @@ class customdialog(private val context: AppCompatActivity) :DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = DialogBinding.inflate(inflater, container, false)
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog?.window?.requestFeature(Window.FEATURE_NO_TITLE)
         val view = binding.root
 
         auth = FirebaseAuth.getInstance()
