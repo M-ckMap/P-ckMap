@@ -77,6 +77,8 @@ class SearchActivity : AppCompatActivity() {
                 bookmarkRef.delete().addOnSuccessListener {
                     Log.d("SearchActivity", "Bookmark removed for mission ID: ${mission.id}")
                     Toast.makeText(this, "Bookmark removed", Toast.LENGTH_SHORT).show()
+                    // Notify MypageFragment to update RecyclerView
+                    notifyBookmarkChange()
                 }.addOnFailureListener { e ->
                     Log.e("SearchActivity", "Error removing bookmark", e)
                     Toast.makeText(this, "Error removing bookmark", Toast.LENGTH_SHORT).show()
@@ -86,6 +88,8 @@ class SearchActivity : AppCompatActivity() {
                 bookmarkRef.set(mission.toMap()).addOnSuccessListener {
                     Log.d("SearchActivity", "Bookmark added for mission ID: ${mission.id}")
                     Toast.makeText(this, "Bookmark added", Toast.LENGTH_SHORT).show()
+                    // Notify MypageFragment to update RecyclerView
+                    notifyBookmarkChange()
                 }.addOnFailureListener { e ->
                     Log.e("SearchActivity", "Error adding bookmark", e)
                     Toast.makeText(this, "Error adding bookmark", Toast.LENGTH_SHORT).show()
@@ -95,5 +99,11 @@ class SearchActivity : AppCompatActivity() {
             Log.e("SearchActivity", "Error checking bookmark status", e)
             Toast.makeText(this, "Error checking bookmark status", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    // Notify MypageFragment to refresh the list
+    private fun notifyBookmarkChange() {
+        // Code to notify MypageFragment to update RecyclerView
+        // This could be a BroadcastReceiver, a shared ViewModel, or another method
     }
 }

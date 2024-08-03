@@ -104,8 +104,13 @@ class MypageFragment : Fragment(), View.OnClickListener {
         val bookmarkRef = FirebaseFirestore.getInstance().collection("users").document(userId)
             .collection("bookmarkedMissions")
 
-        bookmarkRef.get().addOnSuccessListener { result ->
-            val missions = result.map { document ->
+        bookmarkRef.addSnapshotListener { result, e ->
+            if (e != null) {
+                Log.e("MypageFragment", "Error loading bookmarked missions", e)
+                return@addSnapshotListener
+            }
+
+            val missions = result?.map { document ->
                 val data = document.data
                 MissionFragment.Mission(
                     id = document.id,
@@ -113,11 +118,10 @@ class MypageFragment : Fragment(), View.OnClickListener {
                     mission = data["mission"] as String,
                     isBookmarked = true
                 )
-            }
+            } ?: emptyList()
+
             recyclerView.adapter = MissionAdapter(missions) { /* Handle bookmark click */ }
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        }.addOnFailureListener { e ->
-            Log.e("MypageFragment", "Error loading bookmarked missions", e)
         }
     }
 }

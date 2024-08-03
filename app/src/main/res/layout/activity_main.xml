@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/white">
+    android:background="@color/white" >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
@@ -14,9 +14,9 @@
         android:layout_height="45dp"
         android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="@color/white" >
-    </androidx.appcompat.widget.Toolbar>
+        app:titleTextColor="@color/white"></androidx.appcompat.widget.Toolbar>
 
 
     <ImageView
@@ -33,6 +33,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolBar">
 
         <LinearLayout
@@ -46,7 +47,9 @@
     <FrameLayout
         android:id="@+id/mainFrameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/menu_navi"
@@ -56,6 +59,7 @@
         app:itemIconTint="@drawable/color_navi_click"
         app:itemTextColor="@drawable/color_navi_click"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

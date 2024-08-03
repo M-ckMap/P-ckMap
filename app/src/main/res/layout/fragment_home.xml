@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:minHeight="2280px">
+    android:minHeight="2280px" >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
@@ -14,7 +14,9 @@
         android:layout_height="45dp"
         android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="@color/white"></androidx.appcompat.widget.Toolbar>
+        app:titleTextColor="@color/white">
+
+    </androidx.appcompat.widget.Toolbar>
 
 
     <ImageView
