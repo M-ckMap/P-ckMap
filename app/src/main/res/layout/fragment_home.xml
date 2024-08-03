@@ -71,17 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/toSearch"
-                android:layout_width="400dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="-360dp"
-                android:layout_marginTop="-45dp"
-                android:backgroundTint="#00EEEEEE"
-                android:text="Button"
-                android:textColor="@android:color/transparent"
-                app:layout_constraintStart_toEndOf="@+id/search"
-                app:layout_constraintTop_toBottomOf="@+id/search" />
+            
 
             <TextView
                 android:id="@+id/textView"
@@ -120,6 +110,18 @@
                 app:queryHint="검색어를 입력하세요." >
 
             </androidx.appcompat.widget.SearchView>
+
+            <Button
+                android:id="@+id/toSearch"
+                android:layout_width="400dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="-360dp"
+                android:layout_marginTop="-45dp"
+                android:backgroundTint="#00EEEEEE"
+                android:text="Button"
+                android:textColor="@android:color/transparent"
+                app:layout_constraintStart_toEndOf="@+id/search"
+                app:layout_constraintTop_toBottomOf="@+id/search" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
