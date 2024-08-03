@@ -43,27 +43,25 @@ class SearchActivity : AppCompatActivity() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun search(searchWord: String) {
-        val user = FirebaseAuth.getInstance().currentUser
-        val uid = user?.uid
-
-        if (uid != null) {
-            firestore.collection("missions").document(uid)
-                .collection("userMissions")
-                .get()
-                .addOnSuccessListener { querySnapshot ->
-                    missions.clear()
-                    for (document in querySnapshot.documents) {
-                        val missionData = document.toObject(MissionFragment.Mission::class.java)
-                        if (missionData != null && (missionData.location!!.contains(searchWord) || missionData.mission!!.contains(searchWord))) {
-                            missions.add(missionData)
-                        }
+        firestore.collectionGroup("userMissions")
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+                missions.clear()
+                for (document in querySnapshot.documents) {
+                    val missionData = document.toObject(MissionFragment.Mission::class.java)
+                    if (missionData != null &&
+                        (missionData.location!!.contains(searchWord) || missionData.mission!!.contains(
+                            searchWord
+                        ))
+                    ) {
+                        missions.add(missionData)
                     }
-                    adapter.notifyDataSetChanged()
                 }
-                .addOnFailureListener { e ->
-                    Toast.makeText(this, "검색 중 오류가 발생했습니다.", Toast.LENGTH_SHORT).show()
-                }
-        }
+                adapter.notifyDataSetChanged()
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "검색 중 오류가 발생했습니다.", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun toggleBookmark(mission: MissionFragment.Mission) {
@@ -75,6 +73,7 @@ class SearchActivity : AppCompatActivity() {
 
         bookmarkRef.get().addOnSuccessListener { document ->
             if (document.exists()) {
+                // Remove bookmark
                 bookmarkRef.delete().addOnSuccessListener {
                     Log.d("SearchActivity", "Bookmark removed for mission ID: ${mission.id}")
                     Toast.makeText(this, "Bookmark removed", Toast.LENGTH_SHORT).show()
@@ -83,6 +82,7 @@ class SearchActivity : AppCompatActivity() {
                     Toast.makeText(this, "Error removing bookmark", Toast.LENGTH_SHORT).show()
                 }
             } else {
+                // Add bookmark
                 bookmarkRef.set(mission.toMap()).addOnSuccessListener {
                     Log.d("SearchActivity", "Bookmark added for mission ID: ${mission.id}")
                     Toast.makeText(this, "Bookmark added", Toast.LENGTH_SHORT).show()
