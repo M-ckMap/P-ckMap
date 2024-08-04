@@ -1,10 +1,12 @@
 package com.example.guruapp
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.guruapp.databinding.ActivitySearchBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -101,9 +103,7 @@ class SearchActivity : AppCompatActivity() {
         }
     }
 
-    // Notify MypageFragment to refresh the list
     private fun notifyBookmarkChange() {
-        // Code to notify MypageFragment to update RecyclerView
-        // This could be a BroadcastReceiver, a shared ViewModel, or another method
+        LocalBroadcastManager.getInstance(this).sendBroadcast(Intent("BOOKMARK_CHANGE"))
     }
 }

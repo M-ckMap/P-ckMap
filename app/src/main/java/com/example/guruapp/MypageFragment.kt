@@ -124,4 +124,5 @@ class MypageFragment : Fragment(), View.OnClickListener {
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
         }
     }
+
 }
