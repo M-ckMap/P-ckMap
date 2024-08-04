@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="96dp"
     android:background="@drawable/border_layout"
-    android:padding="8dp"
+    android:padding="11dp"
     android:textAlignment="center"
     android:gravity="center" >
 
@@ -16,32 +16,31 @@
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="6dp"
             android:layout_marginTop="9dp"
             android:ellipsize="middle"
             android:gravity="left|bottom"
             android:orientation="vertical"
             android:text="Location"
             android:textColor="@color/main"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/applegsb"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/mission"
             android:layout_width="300dp"
             android:layout_height="40dp"
+            android:fontFamily="@font/applegn"
             android:layout_below="@+id/location"
-            android:layout_marginLeft="6dp"
             android:layout_marginTop="3dp"
             android:gravity="left"
             android:orientation="vertical"
             android:text="Mission"
-            android:textSize="13sp" />
+            android:textSize="16sp" />
 
         <ImageButton
             android:id="@+id/bookmarkButton"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="300dp"
+            android:layout_marginLeft="304dp"
             android:layout_marginTop="25dp"
             android:backgroundTint="@color/fui_transparent"
             android:layout_height="48dp"
